@@ -55,13 +55,7 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-data(Aspirin)
-Aspirin
-Aspirin.expanded <- expand.dft(Aspirin, "count")
-xtabs(~ cancer + treatment, Aspirin.expanded)
-if (require(vcd)) {
-  mosaic(~cancer + treatment, Aspirin.expanded)
-}
+demo(sec9.2)
 
 
 
@@ -2485,10 +2479,7 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-data(Trematodes)
-xtabs(~ infection.status + eaten, Trematodes)
-chisq.test( xtabs(~ infection.status + eaten, Trematodes) )
-summary(chisq.test( xtabs(~ infection.status + eaten, Trematodes) ) )
+demo(sec9.3)
 
 
 
@@ -2600,20 +2591,7 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-data(VampireBites)
-VampireBites
-
-xtabs(count ~ estrous + bitten, data = VampireBites)
-fisher.test(xtabs(count ~ estrous + bitten, data = VampireBites))
-
-# With G-test
-# Source from http://www.psych.ualberta.ca/~phurd/cruft/
-try({
-  source("http://www.psych.ualberta.ca/~phurd/cruft/g.test.r");
-  g.test(xtabs(count ~ estrous + bitten, data = VampireBites));
-  g.test(xtabs(count ~ estrous + bitten, data = VampireBites))$expected
-  }
-)
+demo(sec9.4)
 
 
 
@@ -2960,6 +2938,26 @@ findData('Finch')                 # look for data sets with 'finch' in name
 
 
 cleanEx()
+nameEx("as.xtabs")
+### * as.xtabs
+
+flush(stderr()); flush(stdout())
+
+### Name: as.xtabs
+### Title: Convert objects to xtabs format
+### Aliases: as.xtabs as.xtabs.data.frame as.xtabs.matrix
+### Keywords: manip
+
+### ** Examples
+
+# example from example(fisher.test)
+df <- data.frame( X=c('Tea','Milk'), Tea=c(3,1), Milk=c(1,3) )
+xt <- as.xtabs(df, rowvar="Guess", colvar="Truth"); xt
+if (require(vcd)) { mosaic(xt) }
+
+
+
+cleanEx()
 nameEx("col.abd")
 ### * col.abd
 
@@ -3212,11 +3210,20 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 data(WalkingStickFemurs)
-aovfit <- aov(femur.length ~ 1 + Error(specimen), data = WalkingStickFemurs)
-vc <- varcomps(aovfit, n = 2)
+# With aov() and Error()
+Error.fit <- aov(femur.length ~ 1 + Error(specimen), data = WalkingStickFemurs)
+vc <- varcomps(Error.fit, n = 2)
 vc
-R.varcomps <- repeatability(vc)
-R.varcomps
+repeatability(vc)
+
+# With aov()
+aov.fit <- aov(femur.length ~ specimen, data = WalkingStickFemurs)
+repeatability(aov.fit)
+
+# With lme()
+lme.fit <- lme(femur.length ~ 1, random = ~ 1 | specimen, 
+               data = WalkingStickFemurs)
+repeatability(lme.fit)
 
 
 

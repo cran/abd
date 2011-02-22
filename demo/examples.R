@@ -1,44 +1,9 @@
-
-### Aspirin
-
-Aspirin.expanded <- expand.dft(Aspirin, "count")
-str(Aspirin.expanded)
-
-# Plot 2X2 Contingency tables
-plot( ~ treatment + cancer, data = Aspirin.expanded)
-plot(table(Aspirin.expanded), main = "")
-
-# Calculate odds
-(Pr.asp <- 18496 / (18496 + 1438))
-(Odds.asp <- Pr.asp / (1 - Pr.asp))
-(Pr.no.asp <- 18515 / (18515 + 1427))
-(Odds.no.asp <- Pr.no.asp / (1 - Pr.no.asp))
-(Odds <- Odds.asp / Odds.no.asp)
-ln.Odds <- log(Odds)
-
-(SE.Odds <- sqrt(sum(1/Aspirin$count)))
-Z <- 1.96
-(CI.low <- ln.Odds - Z * SE.Odds)
-(CI.high <- ln.Odds + Z * SE.Odds)
-
-exp(CI.low)
-exp(CI.high)
-
-# Using odds.ratio()
-# First reformat the data so that "No cancer" is in column 1
-# and "Aspirin" is in row 2.
-x <- matrix(c(18515, 18496, 1427, 1438), nrow = 2)
-x
-odds.ratio(x)
-
 ### Blackbirds
-
-
 plot(log.after ~ log.before, data = Blackbirds,
-  xlim = c(3.9, 5.1), ylim = c(3.9, 5.1),
-  pch = 16, col = "red",
-  ylab = "log Antibody production after implant",
-  xlab = "log Antibody production before implant")
+     xlim = c(3.9, 5.1), ylim = c(3.9, 5.1),
+     pch = 16, col = "red",
+     ylab = "log Antibody production after implant",
+     xlab = "log Antibody production before implant")
 abline(b = 1, a = 0)
 
 hist(Blackbirds$diff.in.logs,
@@ -224,11 +189,12 @@ plot(count.sort, count.relfreq,
   ylab = "Cumulative relative frequency")
 
 \dontrun{
-p <- ggplot(data.frame(count.sort, count.relfreq), 
-  aes(count.sort, count.relfreq))
-p + geom_step(direction = "vh") +
-  scale_x_continuous("Species abundance") +
-  scale_y_continuous("Cumulative relative frequency")}
+  p <- ggplot(data.frame(count.sort, count.relfreq), 
+              aes(count.sort, count.relfreq))
+  p + geom_step(direction = "vh") +
+    scale_x_continuous("Species abundance") +
+    scale_y_continuous("Cumulative relative frequency")
+}
 
 ### FingerRatio
 plot(FingerRatio$CAGrepeats,
@@ -300,14 +266,14 @@ cv(GlidingSnakes$undulation.rate)
 
 ### GreatTitMalaria
 \dontrun{
-# Fig. 2.3-1
-require(ggplot2)
-bar <- ggplot(GreatTitMalaria, 
-  aes(x = Treatment, y = count, fill = Response))
-bar + geom_bar(stat = "identity", position = "dodge")
+  ## Fig. 2.3-1
+  require(ggplot2)
+  bar <- ggplot(GreatTitMalaria, 
+                aes(x = Treatment, y = count, fill = Response))
+  bar + geom_bar(stat = "identity", position = "dodge")
 
-# Fig. 2.3-2
-bar + geom_bar(stat = "identity", position = "fill")
+  ## Fig. 2.3-2
+  bar + geom_bar(stat = "identity", position = "fill")
 }
 
 ### Guppies
@@ -619,18 +585,19 @@ legend("bottomright", c("Confidence Bands", "Prediction Interval"),
 
 ### Lynx
 \dontrun{
-# Alternate form converting to Date class.
-Year <- as.Date(paste("01jan", Lynx$date, sep = ""),
-  "\%d\%b\%Y")
-Lynx <- cbind(Lynx, Year)
+  ## Alternate form converting to Date class.
+  Year <- as.Date(paste("01jan", Lynx$date, sep = ""),
+                  "\%d\%b\%Y")
+  Lynx <- cbind(Lynx, Year)
 
-require(ggplot2)
-p <- ggplot(Lynx, aes(Year, no.pelts))
-p + geom_line() + 
-  geom_point(color = "red") +
-  scale_y_continuous("Lynx fur returns") +
-  opts(panel.grid.minor = theme_blank()) +
-  opts(panel.grid.major = theme_line(size = 0.25, colour = "white"))}
+  require(ggplot2)
+  p <- ggplot(Lynx, aes(Year, no.pelts))
+  p + geom_line() + 
+    geom_point(color = "red") +
+    scale_y_continuous("Lynx fur returns") +
+    opts(panel.grid.minor = theme_blank()) +
+    opts(panel.grid.major = theme_line(size = 0.25, colour = "white"))
+}
 
 ### MarineReserve
 hist(MarineReserve$biomass.ratio)
