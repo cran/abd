@@ -1,11 +1,11 @@
 Package: abd
 Type: Package
 Title: The Analysis of Biological Data
-Version: 0.2-2
-Date: 2012-04-03
-Author: Kevin M. Middleton <kmm@csusb.edu>, Randall Pruim
+Version: 0.2-4
+Date: 2012-07-29
+Author: Kevin M. Middleton <middletonk@missouri.edu>, Randall Pruim
         <rpruim@calvin.edu>
-Maintainer: Kevin M. Middleton <kmm@csusb.edu>
+Maintainer: Kevin M. Middleton <middletonk@missouri.edu>
 Depends: R (>= 2.10), nlme, lattice, grid, mosaic
 Suggests: boot, car, ggplot2, plyr, HH, ICC, vcd, Hmisc, manipulate
 Description: The abd package contains data sets and sample code for The
@@ -16,6 +16,6 @@ LazyLoad: yes
 LazyData: yes
 Encoding: UTF-8
 Collate: 'abdData.R' 'histochart.R' 'datasets.R' 'themes.R'
-Packaged: 2012-04-04 17:13:37 UTC; kmm
+Packaged: 2012-07-29 20:03:44 UTC; kmm
 Repository: CRAN
-Date/Publication: 2012-04-04 18:55:28
+Date/Publication: 2012-07-30 04:02:53
