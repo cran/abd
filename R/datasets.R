@@ -6,8 +6,8 @@
 #' 
 #' \tabular{ll}{ Package: \tab abd\cr 
 #'               Type: \tab Package\cr 
-#'               Version: \tab 0.2-6\cr 
-#'               Date: \tab 2014-03-25\cr 
+#'               Version: \tab 0.2-7\cr 
+#'               Date: \tab 2015-02-01\cr 
 #'               License: \tab GPL\cr 
 #'               LazyLoad: \tab yes\cr 
 #'               LazyData: \tab yes\cr }
@@ -19,8 +19,9 @@
 #' (\url{rpruim@@calvin.edu})
 #' @references Whitlock, M.C. and D. Schluter. 2009. \emph{The Analysis of
 #' Biological Data}. Roberts and Company Publishers. ISBN: 0981519407.
-#' \url{http://www.roberts-publishers.com/whitlock/}
+#' \url{http://www.roberts-publishers.com/biology/the-analysis-of-biological-data.html}
 #' @keywords package
+#' @import nlme lattice grid mosaic
 #' @examples
 #' 
 #' trellis.par.set(theme=col.abd())  # set color theme
@@ -49,7 +50,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(dataInfo)
 #' str(dataInfo)
 #' 
 NULL
@@ -75,7 +75,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(AlgaeCO2)
 #' AlgaeCO2
 #' xyplot(growthrate ~ treatment, AlgaeCO2, type = c('p', 'a'))
 #' 
@@ -104,7 +103,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Antilles)
 #' histogram(~immigration.date, Antilles,n=15)
 #' densityplot(~immigration.date, Antilles)
 #' 
@@ -160,7 +158,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(BeeGenes)
 #' str(BeeGenes)
 #' BeeGenes
 #' xtabs( expression ~ type + colony, BeeGenes )
@@ -185,7 +182,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(BeeLifespans)
 #' histogram(~hours, BeeLifespans, n=10)
 #' densityplot(~hours, BeeLifespans)
 #' 
@@ -213,7 +209,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Beetles)
 #' str(Beetles)
 #' xyplot(wing.mass ~ horn.size, Beetles)
 #' 
@@ -238,7 +233,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(BirdSexRatio)
 #' histogram(~corr.coeff, BirdSexRatio, n = 10,
 #'   xlab = "Correlation Coefficient")
 #' 
@@ -268,7 +262,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Blackbirds)
 #' Blackbirds
 #' xyplot(log.after ~ log.before, data = Blackbirds,
 #'   ylab = "log Antibody production after implant",
@@ -297,7 +290,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(BodyFatHeatLoss)
 #' xyplot(lossrate ~ leanness, BodyFatHeatLoss)
 #' 
 NULL
@@ -325,7 +317,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(BrainExpression)
 #' bwplot(PLP1.expression ~ group, BrainExpression)
 #' 
 NULL
@@ -361,15 +352,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(BrookTrout)
-#' data(BrookTrout2)
 #' str(BrookTrout)
 #' str(BrookTrout2)
 #' 
 #' bwplot(proportion.surviving ~ trout, BrookTrout)
 #' 
-#' aggregate( proportion.surviving ~ trout, BrookTrout, FUN = favstats)
-#' summary( proportion.surviving ~ trout, BrookTrout, fun = favstats)
+#' aggregate(proportion.surviving ~ trout, BrookTrout, FUN = favstats)
+#' summary(proportion.surviving ~ trout, BrookTrout, fun = favstats)
 #' 
 NULL
 
@@ -395,10 +384,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Cavalry)
 #' Cavalry
 #' xyplot(count ~ deaths, Cavalry, type='h', lwd=4)
-#' barchart(count ~ deaths, Cavalry, horizontal = FALSE, box.ratio = 1000, origin=0)
+#' barchart(count ~ deaths, Cavalry, horizontal = FALSE,
+#'          box.ratio = 1000, origin=0)
 #' 
 NULL
 
@@ -424,7 +413,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Chickadees)
 #' str(Chickadees)
 #' Chickadees
 #' 
@@ -455,7 +443,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ChimpBrains)
 #' xyplot(asymmetry ~ sex, ChimpBrains)
 #' aggregate(asymmetry ~ sex, ChimpBrains, FUN = favstats)
 #' summary(asymmetry ~ sex, ChimpBrains, fun = favstats)
@@ -486,7 +473,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Cichlids)
 #' str(Cichlids)
 #'
 #' summary(preference ~ genotype, Cichlids, fun = favstats)
@@ -523,7 +509,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(CichlidsGnRH)
 #' xyplot(GnRH.mRNA ~ territorial, CichlidsGnRH, type=c('p','a'))
 #' 
 NULL
@@ -550,7 +535,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Clearcuts)
 #' str(Clearcuts)
 #' histogram(~biomass.change, Clearcuts)
 #' 
@@ -581,7 +565,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(CocaineDopamine)
 #' str(CocaineDopamine)
 #' xyplot(high ~ percent.blocked, CocaineDopamine)
 #' 
@@ -601,14 +584,13 @@ NULL
 #' @format A data frame with 15 observations on the following 2 variables.
 #' \describe{ \item{convictions}{number of convictions}
 #' \item{boys}{number of boys with given number of convictions} }
-#' @references \url{http://webapp.icpsr.umich.edu/cocoon/NACJD-STUDY/08488.xml}
+#' @references \url{http://www.icpsr.umich.edu/icpsrweb/NACJD/archive.jsp}
 #' @source Farrington, D.P. 1994. \emph{Cambridge Study in Delinquent
 #' Development} [Great Britain], 1961-1981. 2nd ICPSR ed. Inter-university
 #' Consortium for Political and Social Research, Ann Arbor, MI.
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Convictions)
 #' str(Convictions)
 #' barchart(boys ~ as.factor(convictions), Convictions, horizontal = FALSE, origin=0)
 #' xyplot( boys ~ convictions, Convictions, type = "h", lwd = 20)
@@ -631,7 +613,7 @@ NULL
 #' \describe{ \item{convicted}{a factor with levels \code{no} and
 #' \code{yes}} \item{income}{a factor with levels \code{adequate},
 #' \code{comfortable}, and \code{inadequate}} }
-#' @references \url{http://webapp.icpsr.umich.edu/cocoon/NACJD-STUDY/08488.xml}
+#' @references \url{http://www.icpsr.umich.edu/icpsrweb/NACJD/archive.jsp}
 #' @source Farrington, D.P. 1994. \emph{Cambridge Study in Delinquent
 #' Development} [Great Britain], 1961-1981. 2nd ICPSR ed. Inter-university
 #' Consortium for Political and Social Research, Ann Arbor, MI.
@@ -665,7 +647,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Crickets)
 #' Crickets
 #' xyplot(lysozyme ~ sperm.viability, Crickets)
 #' 
@@ -692,7 +673,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(DEET)
 #' str(DEET)
 #' xyplot(bites ~ dose, DEET)
 #' 
@@ -720,7 +700,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(DaphniaLongevity)
 #' str(DaphniaLongevity)
 #' xyplot(sqrt.spores ~ longevity, DaphniaLongevity)
 #' 
@@ -747,12 +726,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(DaphniaResistance)
 #' str(DaphniaResistance)
 #' 
 #' 
 #' bwplot(resistance ~ density, DaphniaResistance)
-#' # with such a small data set, we can display all the data rather than a summary
+#' # with such a small data set, we can display all the data
+#' # rather than a summary
 #' xyplot(resistance ~ density, DaphniaResistance)
 #' histogram( ~ resistance| density, DaphniaResistance, 
 #' 	strip=FALSE, strip.left = TRUE,
@@ -782,11 +761,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(DayOfBirth)
 #' DayOfBirth
 #' barchart( day ~ births, DayOfBirth, origin=0)
 #' 
-#' # fix bad ordering of days
+#' # Fix bad ordering of days
 #' DayOfBirth$oday <- with(DayOfBirth, ordered(day, levels = day))
 #' barchart( oday ~ births, DayOfBirth, origin=0)
 #' barchart( births ~ oday, DayOfBirth, horizontal = FALSE, origin=0)
@@ -823,9 +801,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(DesertBirds)
 #' str(DesertBirds)
-#' histogram( ~count, DesertBirds,
+#' histogram(~ count, DesertBirds,
 #'   xlab = "Abundance"
 #'   )
 #' 
@@ -852,7 +829,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Dioecy)
 #' xyplot(dioecious ~ monomorphic, Dioecy, alpha = 0.65, pch = 16)
 #' 
 NULL
@@ -879,10 +855,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Dolphins)
 #' Dolphins
 #' hist(Dolphins$percent.clockwise)
-#' histogram(~percent.clockwise, Dolphins)
+#' histogram(~ percent.clockwise, Dolphins)
 #' 
 NULL
 
@@ -910,7 +885,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(DungBeetles)
 #' str(DungBeetles)
 #' xyplot(offspring.condition ~ factor(id), DungBeetles, 
 #'   xlab='Dung Beetle', 
@@ -941,7 +915,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Earthworms)
 #' str(Earthworms)
 #' xyplot(nitrogen ~ worm.species, Earthworms)
 #' 
@@ -973,7 +946,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Earwigs)
 #' xyplot(proportion.forceps ~ density, data=Earwigs, type='h', lwd=6)
 #' 
 #' 
@@ -1004,7 +976,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Eelgrass)
 #' Eelgrass
 #' 
 #' # Convert treatment.genotypes to a factor
@@ -1036,7 +1007,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ElVerde)
 #' ElVerde
 #' xyplot(num.species ~ breadth, ElVerde, type='h',lwd=3)
 #' 
@@ -1068,7 +1038,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ElectricFish)
 #' ElectricFish
 #' require(grid)
 #' xyplot(species.upstream ~ species.downstream, data = ElectricFish,
@@ -1097,13 +1066,12 @@ NULL
 #' @format A data frame with 11 observations on the following 2 variables.
 #' \describe{ \item{taxon}{a character vector}
 #' \item{num.species}{a numeric vector} }
-#' @references \url{http://www.fws.gov/endangered/wildlife.html}
+#' @references \url{http://www.fws.gov/endangered/}
 #' @source U.S. Fish and Wildlife Service. 2001. Number of U.S. listed species
 #' per calendar year.
 #' @keywords datasets
 #' @examples
 #' 
-#' data(EndangeredSpecies)
 #' str(EndangeredSpecies)
 #' EndangeredSpecies
 #' 
@@ -1132,7 +1100,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(FingerRatio)
 #' str(FingerRatio)
 #' xyplot(finger.ratio ~ CAGrepeats, FingerRatio,
 #'   xlab = "Number of CAG Repeats",
@@ -1165,7 +1132,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Fireflies)
 #' str(Fireflies)
 #' histogram(~sp.mass, Fireflies, n=12)
 #' 
@@ -1191,7 +1157,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(FireflyFlash)
 #' str(FireflyFlash)
 #' histogram(~flash, FireflyFlash)
 #' 
@@ -1219,7 +1184,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(FlyTestes)
 #' str(FlyTestes)
 #' FlyTestes
 #' 
@@ -1246,7 +1210,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(FlycatcherPatch)
 #' str(FlycatcherPatch)
 #' xyplot(patch99 ~ patch98, FlycatcherPatch)
 #' 
@@ -1273,7 +1236,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(GeneRegulation)
 #' str(GeneRegulation)
 #' xyplot(count ~ genes.regulated, GeneRegulation, type='h', lwd=3)
 #' 
@@ -1301,8 +1263,6 @@ NULL
 #' \emph{Nature} 418: 603-604.
 #' @keywords datasets
 #' @examples
-#' 
-#' data(GlidingSnakes)
 #' 
 #' histogram(~undulation.rate , data=GlidingSnakes, n=7,
 #'   xlab = "Undulation rate (Hz)",
@@ -1333,7 +1293,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(GodwitArrival)
 #' xyplot(male~female, GodwitArrival, main='Arrival of Godwit pairs')
 #' 
 NULL
@@ -1360,7 +1319,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Grassland)
 #' xyplot(num.species ~ jitter(nutrients, amount=0.1), Grassland, pch=16)
 #' 
 NULL
@@ -1423,7 +1381,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Greenspace)
 #' str(Greenspace)
 #' splom(Greenspace[,2:6])
 #' 
@@ -1451,8 +1408,6 @@ NULL
 #' between male sexual attractiveness and survival. \emph{Nature} 406: 67-70.
 #' @keywords datasets
 #' @examples
-#' 
-#' data(Guppies)
 #' 
 #' str(Guppies)
 #' xyplot(son.attract ~ father.ornament,
@@ -1488,7 +1443,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Hemoglobin)
 #' str(Hemoglobin)
 #' 
 #' xyplot(relative.frequency ~ hemoglobin | group, Hemoglobin,
@@ -1517,7 +1471,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(HippocampusLesions)
 #' HippocampusLesions
 #' 
 #' xyplot(memory ~ lesion, data = HippocampusLesions,
@@ -1550,7 +1503,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(HornedLizards)
 #' str(HornedLizards)
 #' 
 #' histogram(~horn.length | group, HornedLizards, 
@@ -1584,7 +1536,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(HumanBodyTemp)
 #' histogram(~temp, HumanBodyTemp)
 #' stem(HumanBodyTemp$temp, scale = 2)
 #' favstats(HumanBodyTemp$temp)
@@ -1620,38 +1571,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(HumanGeneLengths)
 #' str(HumanGeneLengths)
-#' histogram(~gene.length, HumanGeneLengths, subset=gene.length<15000)
-#' 
-#' if (require(manipulate) & nzchar(Sys.getenv("RSTUDIO_USER_IDENTITY"))){
-#'   ## Resampled mean, sd, SE
-#'   genes <- function(n){
-#'     nreps <- 1000
-#'     sample.mean <- numeric(nreps) # vector for sample means
-#'     sample.se <- numeric(nreps)   # vector for sample standard errors
-#'     sample.sd <- numeric(nreps)   # vector for sample standard deviations
-#'     for (i in 1:nreps){
-#'       random.sample <- sample(HumanGeneLengths$gene.length, size = n)
-#'       sample.mean[i] <- mean(random.sample)
-#'       sample.sd[i] <- sd(random.sample)
-#'       sample.se[i] <- sd(random.sample)/sqrt(n)
-#'     }
-#'     hist.bins <- hist(sample.mean, breaks = 30, plot = FALSE)
-#'     hist(sample.mean,
-#'       breaks = 30, xlim = c(1000, 4000),
-#'       xlab = "Sample mean length (nucleotides)",
-#'       col = "red", main = "")
-#'     abline(v = mean(sample.mean), col = "blue", lwd = 2)
-#'     text(x = 3200, y = 0.6 * max(hist.bins$counts), 
-#'       pos = 4, cex = 1.25,
-#'       paste("n = ", n, 
-#'         "\nmean = ", round(mean(sample.mean), digits = 1), 
-#'         "\nsd = ", round(mean(sample.sd), digits = 1), 
-#'         "\nse = ", round(mean(sample.se), digits = 1), sep = ""))
-#'    }
-#' manipulate(genes(n), n = slider(1, 500))
-#' }
+#' histogram(~ gene.length, HumanGeneLengths,
+#'           subset = gene.length < 15000)
 #' 
 NULL
 
@@ -1679,7 +1601,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Hurricanes)
 #' Hurricanes
 #' 
 NULL
@@ -1704,9 +1625,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Iguanas)
 #' str(Iguanas)
-#' histogram(~change.in.length, Iguanas, n = 10)
+#' histogram(~ change.in.length, Iguanas, n = 10)
 #' 
 NULL
 
@@ -1732,7 +1652,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(IntertidalAlgae)
 #' str(IntertidalAlgae)
 #' 
 #' # Using * includes the main effects and the interaction
@@ -1792,7 +1711,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(KenyaFinches)
 #' table(KenyaFinches$species)
 #' xyplot(beak.length ~ species, KenyaFinches)
 #' bwplot(beak.length ~ species, KenyaFinches)
@@ -1821,7 +1739,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LanguageBrains)
 #' str(LanguageBrains)
 #' xyplot(proficiency ~ greymatter, LanguageBrains)
 #' 
@@ -1849,7 +1766,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LarvalFish)
 #' str(LarvalFish)
 #' xyplot(cv ~ age | exploited, LarvalFish)
 #' xyplot(cv ~ age, groups=exploited, LarvalFish)
@@ -1879,7 +1795,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Lefthanded)
 #' str(Lefthanded)
 #' xyplot(murder.rate ~ percent.left, Lefthanded)
 #' 
@@ -1906,7 +1821,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LionCubs)
 #' xyplot(days.to.next.cub ~ cause.of.death, LionCubs)
 #' 
 NULL
@@ -1933,7 +1847,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LionNoses)
 #' xyplot(age ~ proportion.black, LionNoses)
 #' 
 NULL
@@ -1961,7 +1874,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LiverPreparation)
 #' str(LiverPreparation)
 #' xyplot(unbound.fraction ~ concentration, LiverPreparation)
 #' 
@@ -1996,7 +1908,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LizardBite)
 #' str(LizardBite)
 #' xyplot(territory ~ bite, LizardBite)
 #' 
@@ -2026,10 +1937,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LizardSprint)
-#' histogram(~speed, LizardSprint)
+#' histogram(~ speed, LizardSprint)
 #' Lizard2 <- aggregate(speed ~ lizard, LizardSprint, mean)
-#' histogram(~speed, Lizard2)
+#' histogram(~ speed, Lizard2)
 #' 
 NULL
 
@@ -2053,9 +1963,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Lobsters)
-#' histogram(~orientation, Lobsters)
-#' dotplot(~orientation, Lobsters)
+#' histogram(~ orientation, Lobsters)
+#' dotplot(~ orientation, Lobsters)
 #' 
 NULL
 
@@ -2087,7 +1996,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LodgepolePines)
 #' LodgepolePines
 #' str(LodgepolePines)
 #' xyplot(conemass ~ habitat, LodgepolePines)
@@ -2116,7 +2024,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(LupusMice)
 #' str(LupusMice)
 #' 
 NULL
@@ -2141,7 +2048,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Lynx)
 #' xyplot(pelts ~ year, Lynx, type=c('p','l'))
 #' 
 NULL
@@ -2159,15 +2065,13 @@ NULL
 #' @docType data
 #' @format A data frame with 32 observations of one variable.  \describe{
 #' \item{biomass.ratio}{} }
-#' @references \url{http://www.nceas.ucsb.edu/~halpern/pdf/Halpern_EA_2003.pdf}
 #' @source Halpern, B.S. 2003. The impact of marine reserves: do reserves work
 #' and does reserve size matter? \emph{Ecological Applications} 13: S117-S137.
 #' @keywords datasets
 #' @examples
 #' 
-#' data(MarineReserve)
 #' str(MarineReserve)
-#' histogram(~biomass.ratio, MarineReserve)
+#' histogram(~ biomass.ratio, MarineReserve)
 #' 
 NULL
 
@@ -2192,7 +2096,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(MassExtinctions)
 #' MassExtinctions
 #' 
 NULL
@@ -2223,7 +2126,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(MoleRats)
 #' MoleRats
 #' 
 NULL
@@ -2250,7 +2152,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Mosquitoes)
 #' xyplot(weight ~ sex, Mosquitoes)
 #' 
 NULL
@@ -2279,7 +2180,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(MouseEmpathy)
 #' str(MouseEmpathy)
 #' 
 #' aov.fit <- aov(percent.stretching ~ treatment, data = MouseEmpathy)
@@ -2310,7 +2210,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(NeanderthalBrains)
 #' xyplot(ln.brain ~ ln.mass, data=NeanderthalBrains, groups=species)
 #' 
 NULL
@@ -2340,7 +2239,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(NematodeLifespan)
 #' str(NematodeLifespan)
 #' 
 NULL
@@ -2369,7 +2267,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(NeotropicalTrees)
 #' str(NeotropicalTrees)
 #' NeotropicalTrees
 #' 
@@ -2399,7 +2296,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Newts)
 #' Newts
 #' 
 NULL
@@ -2427,7 +2323,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(NoSmokingDay)
 #' NoSmokingDay
 #' 
 NULL
@@ -2455,7 +2350,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(NorthSeaCod)
 #' favstats(NorthSeaCod$log10.recruits)
 #' 
 NULL
@@ -2488,7 +2382,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(OstrichTemp)
 #' xyplot(brain.temp ~ body.temp, OstrichTemp)
 #' 
 NULL
@@ -2514,9 +2407,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Penguins)
 #' str(Penguins)
-#' dotplot(slope~group, Penguins)
+#' dotplot(slope ~ group, Penguins)
 #' 
 NULL
 
@@ -2542,7 +2434,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(PlantPersistence)
 #' xyplot(generations~treatment, PlantPersistence)
 #' 
 NULL
@@ -2568,7 +2459,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Pollen)
 #' str(Pollen)
 #' xyplot(proportion.sterile ~ genetic.distance, Pollen)
 #' 
@@ -2595,7 +2485,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Powerball)
 #' Powerball
 #' xyplot(millions.of.tickets.sold ~ day, Powerball)
 #' 
@@ -2621,7 +2510,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(PrimateMetabolism)
 #' str(PrimateMetabolism)
 #' xyplot(bmr ~ mass, PrimateMetabolism)
 #' xyplot(bmr ~ mass, PrimateMetabolism, scales=list(log=TRUE))
@@ -2647,7 +2535,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(PrimateWBC)
 #' xyplot(WBC.more ~ WBC.less, PrimateWBC)
 #' 
 NULL
@@ -2675,7 +2562,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ProgesteroneExercise)
 #' str(ProgesteroneExercise)
 #' xyplot(ventilation ~ progesterone, ProgesteroneExercise)
 #' 
@@ -2704,7 +2590,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Pseudoscorpions)
 #' str(Pseudoscorpions)
 #' bwplot(successful.broods ~ treatment, Pseudoscorpions)
 #' aggregate(successful.broods ~ treatment, Pseudoscorpions, favstats)
@@ -2739,7 +2624,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Pufferfish)
 #' str(Pufferfish)
 #' xyplot(predators ~ jitter(resemblance, amount = 0.1), Pufferfish)
 #' Pufferfish
@@ -2768,7 +2652,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Rattlesnakes)
 #' str(Rattlesnakes)
 #' xyplot(meal.size ~ temp.change, Rattlesnakes)
 #' 
@@ -2789,12 +2672,11 @@ NULL
 #' \describe{ \item{hours}{a numeric vector} \item{count}{a
 #' numeric vector} }
 #' @source Pounder, D.J. 1995. Postmortem changes and time of death. University
-#' of Dundee. \url{http://www.dundee.ac.uk/forensicmedicine/llb/timedeath.htm}.
+#' of Dundee.
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Rigormortis)
-#' xyplot(count~hours, Rigormortis, type='h', lwd=3)
+#' xyplot(count ~ hours, Rigormortis, type='h', lwd=3)
 #' barchart(count ~ hours, Rigormortis, horizontal=FALSE, origin=0)
 #' 
 NULL
@@ -2821,7 +2703,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(RopeTrick)
 #' xyplot(impressiveness ~ years, RopeTrick)
 #' 
 #' 
@@ -2849,7 +2730,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SagebrushCrickets)
 #' SagebrushCrickets
 #' str(SagebrushCrickets)
 #' 
@@ -2877,9 +2757,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SalmonColor)
 #' SalmonColor
-#' histogram(~skin.color | species, SalmonColor)
+#' histogram(~ skin.color | species, SalmonColor)
 #' bwplot(skin.color ~ species, SalmonColor)
 #' 
 NULL
@@ -2901,7 +2780,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Seedlings)
 #' Seedlings
 #' 
 NULL
@@ -2934,8 +2812,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Selection)
-#' histogram(~strength.of.selection, Selection,n=40)
+#' histogram(~ strength.of.selection, Selection,n=40)
 #' table(Selection$species) -> s
 #' table(s)
 #' s[s>10] # most common species
@@ -2964,14 +2841,13 @@ NULL
 #' \item{monandrous.species}{a numeric vector}
 #' \item{difference}{a numeric vector}
 #' \item{taxon.pair}{identifier} }
-#' @references \url{http://www.egs.uu.se/evbiol/Persons/Urban/1.pdf}
+#' @references \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC27046/}
 #' @source Arnqvist, G., M. Edvardsson, U. Friberg, and T. Nilsson. 2000.
 #' Sexual conflict promotes speciation in insects. \emph{Proceedings of the
 #' National Academy of Sciences (USA)} 97: 10460-10464.
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SexualSelection)
 #' SexualSelection
 #' 
 #' histogram(~ difference, SexualSelection, n = 20)
@@ -3011,7 +2887,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ShadParasites)
 #' ShadParasites
 #' 
 NULL
@@ -3037,11 +2912,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ShrinkingSeals)
 #' str(ShrinkingSeals)
 #' 
 #' plot(ShrinkingSeals, pch = 16, cex = 0.5)
-#' xyplot(length ~ age, ShrinkingSeals, pch=16, alpha=.65, cex=.6)
+#' xyplot(length ~ age, ShrinkingSeals, pch=16, alpha=0.65, cex=0.6)
 #' 
 NULL
 
@@ -3070,9 +2944,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ShuttleDisaster)
 #' str(ShuttleDisaster)
-#' xyplot( jitter(failures,amount=.1) ~ temperature, ShuttleDisaster,
+#' xyplot( jitter(failures, amount=0.1) ~ temperature, ShuttleDisaster,
 #'   ylab='number of failures'
 #'   )
 #' 
@@ -3098,7 +2971,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Silversword)
 #' Silversword
 #' 
 NULL
@@ -3126,7 +2998,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SleepAndPerformance)
 #' str(SleepAndPerformance)
 #' xyplot(improvement ~ sleep, SleepAndPerformance)
 #' 
@@ -3153,7 +3024,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SockeyeFemales)
 #' str(SockeyeFemales)
 #' summary(SockeyeFemales)
 #' 
@@ -3180,7 +3050,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Sparrows)
 #' Sparrows
 #' 
 NULL
@@ -3206,7 +3075,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SpiderColonies)
 #' str(SpiderColonies)
 #' SpiderColonies
 #' 
@@ -3235,7 +3103,6 @@ NULL
 #' (USA)} 101: 4883-4887.
 #' @keywords datasets
 #' @examples
-#' data(SpiderSpeed)
 #' xyplot(speed.after ~ speed.before, SpiderSpeed)
 #' favstats(SpiderSpeed$speed.before)
 #' favstats(SpiderSpeed$speed.after)
@@ -3260,7 +3127,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Stalkies1)
 #' Stalkies1
 #' 
 NULL
@@ -3288,7 +3154,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Stalkies2)
 #' str(Stalkies2)
 #' xyplot(eye.span ~ food, Stalkies2)
 #' aggregate(eye.span ~ food, Stalkies2, FUN = favstats)
@@ -3323,8 +3188,6 @@ NULL
 #' \url{http://www.plosbiology.org/article/info:doi/10.1371/journal.pbio.0020109}
 #' @keywords datasets
 #' @examples
-#' 
-#' data(SticklebackPlates)
 #' 
 #' aggregate(plates ~ genotype, SticklebackPlates, FUN = favstats)
 #' 
@@ -3363,10 +3226,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SticklebackPreference)
 #' SticklebackPreference
-#' histogram(~preference.index, SticklebackPreference)
-#' dotplot(~preference.index, SticklebackPreference)
+#' histogram(~ preference.index, SticklebackPreference)
+#' dotplot(~ preference.index, SticklebackPreference)
 #' 
 NULL
 
@@ -3390,7 +3252,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Sumo)
 #' xyplot(count ~ wins, Sumo, type='h', lwd=4)
 #' 
 NULL
@@ -3414,10 +3275,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(SyrupSwimming)
 #' SyrupSwimming
-#' histogram(~relative.speed, SyrupSwimming)
-#' dotplot(~relative.speed, SyrupSwimming)
+#' histogram(~ relative.speed, SyrupSwimming)
+#' dotplot(~ relative.speed, SyrupSwimming)
 #' 
 NULL
 
@@ -3441,8 +3301,6 @@ NULL
 #' Statistics; Hyattsville, Maryland.
 #' @keywords datasets
 #' @examples
-#' 
-#' data(TeenDeaths)
 #' 
 #' str(TeenDeaths)
 #' TeenDeaths
@@ -3485,7 +3343,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Telomeres)
 #' xyplot(years ~ telomere.length, Telomeres,
 #'   xlab = "Time since diagnosis (years)",
 #'   ylab = "Telomere length (ratio)"
@@ -3515,7 +3372,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(TimeOfDeath)
 #' xyplot(hypoxanthine ~ hours, TimeOfDeath, type=c('p','r'))
 #' 
 NULL
@@ -3537,12 +3393,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Toads)
 #' Toads
 #' # generate this data manually
 #' cbind(0:18, dbinom(0:18, 18, 0.5))
-#' xyplot(prob~n.toads, Toads, type = 'h', lwd = 4)
-#' barchart(prob~n.toads, Toads, origin=0, horizontal=FALSE)
+#' xyplot(prob ~ n.toads, Toads, type = 'h', lwd = 4)
+#' barchart(prob ~ n.toads, Toads, origin=0, horizontal=FALSE)
 #' plotDist('binom', params = list(18,0.5), kind = 'hist')
 #' 
 #' 
@@ -3573,7 +3428,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Tobacco)
 #' Tobacco
 #' 
 NULL
@@ -3601,8 +3455,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Tobacco2)
-#' xtabs(~flower.length + generation, Tobacco2)
+#' xtabs(~ flower.length + generation, Tobacco2)
 #' bwplot(flower.length ~ generation, Tobacco2)
 #' 
 NULL
@@ -3630,7 +3483,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ToothAge)
 #' str(ToothAge)
 #' xyplot(actual ~ estimated, ToothAge)
 #' 
@@ -3658,7 +3510,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(TreeSeedlings)
 #' str(TreeSeedlings)
 #' splom(TreeSeedlings)
 #' 
@@ -3714,7 +3565,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Trillium)
 #' str(Trillium)
 #' splom(Trillium)
 #' 
@@ -3742,10 +3592,9 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Truffles)
 #' Truffles
-#' xyplot(count~truffles, Truffles, type='h', lwd=4)
-#' barchart(count~truffles, Truffles, origin=0, horizontal=FALSE)
+#' xyplot(count ~ truffles, Truffles, type='h', lwd=4)
+#' barchart(count ~ truffles, Truffles, origin=0, horizontal=FALSE)
 #' 
 NULL
 
@@ -3772,7 +3621,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(TsetseLearning)
 #' xyplot(proportion.cow ~ treatment, TsetseLearning)
 #' 
 NULL
@@ -3798,7 +3646,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(TwoKids)
 #' TwoKids
 #' observed <- TwoKids$count
 #' expected <- c(585.3, 1221.4, 637.3)
@@ -3870,7 +3717,6 @@ NULL
 #' expression of a single gene. \emph{Nature} 429: 754-757.
 #' @keywords datasets
 #' @examples
-#' data(VasopressinVoles)
 #' xyplot(percent ~ treatment, VasopressinVoles, type=c('p','a'))
 #' bwplot(percent ~ treatment, VasopressinVoles)
 #' 
@@ -3899,7 +3745,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Vines)
 #' xyplot(nonclimbing ~ climbing, Vines, scales=list(log=TRUE))
 #' 
 NULL
@@ -3925,7 +3770,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(VoleDispersal)
 #' xtabs(count~sex+homeranges,VoleDispersal)
 #' barchart( xtabs(count~sex+homeranges,VoleDispersal), origin=0, auto.key=TRUE)
 #' barchart(count~sex+homeranges,VoleDispersal, origin=0)
@@ -3985,9 +3829,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(WalkingStickHeads)
-#' aggregate(head.width~specimen, data=WalkingStickHeads, mean) -> WS
-#' histogram(~head.width, WS)
+#' aggregate(head.width ~ specimen, data=WalkingStickHeads, mean) -> WS
+#' histogram(~ head.width, WS)
 #' 
 NULL
 
@@ -4015,7 +3858,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(WeddellSeals)
 #' xyplot(oxygen.use.nonfeeding ~ oxygen.use.feeding, WeddellSeals)
 #' 
 NULL
@@ -4043,7 +3885,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(WillsDebates)
+#' WillsDebates
 #' 
 NULL
 
@@ -4070,7 +3912,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(WillsPresidents)
+#' WillsPresidents
 #' 
 NULL
 
@@ -4096,8 +3938,7 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(WolfTeeth)
-#' histogram(~length, WolfTeeth)
+#' histogram(~ length, WolfTeeth)
 #' 
 NULL
 
@@ -4122,9 +3963,8 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Wolves)
 #' Wolves
-#' xyplot( inbreeding.coefficient ~ jitter(pups, amount=0.15), Wolves) 
+#' xyplot(inbreeding.coefficient ~ jitter(pups, amount=0.15), Wolves) 
 #' 
 NULL
 
@@ -4145,7 +3985,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(WorldCup)
 #' xyplot(count ~ score, WorldCup, type='h', lwd=4)
 #' barchart(count ~ score, WorldCup, origin=0, horizontal=FALSE)
 #' 
@@ -4168,7 +4007,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(WrasseSexes)
 #' xtabs(count ~ males + females, WrasseSexes)
 #' 
 NULL
@@ -4193,7 +4031,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(YeastGenes)
 #' str(YeastGenes)
 #' barchart(count ~ genes.controlled , origin=0, YeastGenes, horizontal=FALSE)
 #' 
@@ -4220,7 +4057,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ZebraFinchBeaks)
 #' ZebraFinchBeaks
 #' 
 NULL
@@ -4248,7 +4084,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ZebraFinches)
 #' ZebraFinches
 #' 
 NULL
@@ -4275,7 +4110,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(ZooMortality)
 #' str(ZooMortality)
 #' 
 NULL
@@ -4304,7 +4138,6 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' data(Zooplankton)
 #' Zooplankton
 #' 
 #' Zooplankton$block <- factor(Zooplankton$block)
