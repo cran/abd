@@ -1,8 +1,8 @@
 Package: abd
 Type: Package
 Title: The Analysis of Biological Data
-Version: 0.2-7
-Date: 2015-02-01
+Version: 0.2-8
+Date: 2015-07-02
 Author: Kevin M. Middleton <middletonk@missouri.edu>, Randall Pruim
     <rpruim@calvin.edu>
 Maintainer: Kevin M. Middleton <middletonk@missouri.edu>
@@ -16,7 +16,7 @@ LazyLoad: yes
 LazyData: yes
 Encoding: UTF-8
 Collate: 'abdData.R' 'histochart.R' 'datasets.R' 'themes.R'
-Packaged: 2015-02-02 01:18:31 UTC; kmm
 NeedsCompilation: no
+Packaged: 2015-07-03 01:35:03 UTC; kmm
 Repository: CRAN
-Date/Publication: 2015-02-02 07:38:00
+Date/Publication: 2015-07-03 05:44:45

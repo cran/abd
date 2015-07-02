@@ -6,8 +6,8 @@
 #' 
 #' \tabular{ll}{ Package: \tab abd\cr 
 #'               Type: \tab Package\cr 
-#'               Version: \tab 0.2-7\cr 
-#'               Date: \tab 2015-02-01\cr 
+#'               Version: \tab 0.2-8\cr 
+#'               Date: \tab 2015-07-02\cr 
 #'               License: \tab GPL\cr 
 #'               LazyLoad: \tab yes\cr 
 #'               LazyData: \tab yes\cr }
@@ -22,6 +22,7 @@
 #' \url{http://www.roberts-publishers.com/biology/the-analysis-of-biological-data.html}
 #' @keywords package
 #' @import nlme lattice grid mosaic
+#' @importFrom grDevices colorRampPalette gray
 #' @examples
 #' 
 #' trellis.par.set(theme=col.abd())  # set color theme
@@ -67,8 +68,6 @@ NULL
 #' @format A data frame with 14 observations on the following 2 variables.
 #' \describe{ \item{treatment}{a factor with levels \code{Normal} and
 #' \code{High}} \item{growthrate}{a numeric vector} }
-#' @references
-#' \url{http://www.nature.com/nature/journal/v431/n7008/full/nature02945.html}
 #' @source Collins, S. and G. Bell. 2004. Phenotypic consequences of 1,000
 #' generations of selection at elevated CO\eqn{_{2}}{2} in a green alga.
 #' \emph{Nature} 431: 566-569.
@@ -123,7 +122,7 @@ NULL
 #' \item{treatment}{a factor with levels \code{Aspirin} and
 #' \code{Placebo}} \item{cancer}{a factor with levels \code{no} and
 #' \code{yes}} }
-#' @references \url{http://jama.ama-assn.org/cgi/content/abstract/294/1/47}
+#' @references \url{http://www.ncbi.nlm.nih.gov/pubmed/15998890}
 #' @source Cook, N.R., I. Lee, J.M. Gaziano, D. Gordon, P.M. Ridker, J.E.
 #' Manson, C.H. Hennekens, and J.E. Buring. 2005. Low-dose aspirin in the
 #' primary prevention of cancer. \emph{Journal of the American Medical
@@ -1705,7 +1704,6 @@ NULL
 #' \describe{ \item{species}{a factor with levels: \code{CRU.WAXB},
 #' \code{CUTTHROA}, and \code{WB.SPARW}} \item{mass}{mass (g)}
 #' \item{beak.length}{beak length (mm)} }
-#' @references \url{http://www.jstor.org/pss/1942538}
 #' @source Schluter, D. 1988. The evolution of finch communities on islands and
 #' continents: Kenya vs. Galapagos. \emph{Ecological Monographs} 58: 229-249.
 #' @keywords datasets
@@ -1866,7 +1864,7 @@ NULL
 #' @format A data frame with 5 observations on the following 2 variables.
 #' \describe{ \item{concentration}{a numeric vector}
 #' \item{unbound.fraction}{a numeric vector} }
-#' @references \url{http://www.springerlink.com/content/p134310534nw8j72}
+#' @references \url{http://www.ncbi.nlm.nih.gov/pubmed/3199317}
 #' @source Smallwood, R.H., D.J. Morgan, G.W. Mihaly, and R.A. Smallwood. 1998.
 #' Effect of a protein binding change on unbound and total plasma
 #' concentrations for drugs of intermediate hepatic extraction. \emph{Journal
@@ -2880,7 +2878,7 @@ NULL
 #' \describe{ \item{parasites}{a numeric vector} \item{count}{a
 #' numeric vector} }
 #' @references
-#' \url{http://journals.cambridge.org/action/displayAbstract?aid=24297}
+#' \url{http://www.ncbi.nlm.nih.gov/pubmed/9881385}
 #' @source Shaw, D.J., B.T. Grenfell, and A.P. Dobson. 1998. Patterns of
 #' macroparasite aggregation in wildlife host populations. \emph{Parasitology}
 #' 117: 597-610.
@@ -2991,8 +2989,6 @@ NULL
 #' \describe{ \item{sleep}{a numeric vector}
 #' \item{improvement}{a numeric vector} }
 #' @references \url{http://www.ncbi.nlm.nih.gov/pubmed/15184907}
-#' 
-#' \url{http://www.nature.com/nature/journal/v430/n6995/full/nature02663.html}
 #' @source Huber, R., M.F. Ghilardi, M. Massimini, and G. Tononi. 2004. Local
 #' sleep and learning. \emph{Nature} 430: 78-81.
 #' @keywords datasets
@@ -3017,7 +3013,6 @@ NULL
 #' @docType data
 #' @format A data frame with 228 observations of a single variable. \describe{
 #' \item{mass}{body mass (kg)} }
-#' @references \url{http://www.jstor.org/stable/3546699}
 #' @source Hendry, A.P., O.K. Berg, and T.P. Quinn. 1999. Condition dependence
 #' and adaptation-by-time: Breeding date, life history, and energy allocation
 #' within a population of salmon. \emph{Oikos} 85: 499-514.
@@ -3146,8 +3141,6 @@ NULL
 #' @format A data frame with 45 observations on the following 2 variables.
 #' \describe{ \item{food}{a factor with levels \code{Corn}
 #' \code{Cotton}} \item{eye.span}{a numeric vector} }
-#' @references
-#' \url{http://www.nature.com/nature/journal/v406/n6792/full/406186a0.html}
 #' @source David, P., T. Bjorksten, K. Fowler, and A. Pomiankowski. 2000.
 #' Condition-dependent signalling of genetic variation in stalk-eyed flies.
 #' \emph{Nature} 406: 186-188.
@@ -3475,8 +3468,6 @@ NULL
 #' @format A data frame with 20 observations on the following 2 variables.
 #' \describe{ \item{actual}{a numeric vector}
 #' \item{estimated}{a numeric vector} }
-#' @references
-#' \url{http://www.nature.com/nature/journal/v437/n7057/full/437333a.html}
 #' @source Spalding, K.L., B.A. Buchholz, L.-E. Bergman, H. Druid, and J.
 #' Frisén. 2005. Age written in teeth by nuclear tests. \emph{Nature} 437:
 #' 333-334.
@@ -3558,10 +3549,9 @@ NULL
 #' \describe{ \item{population}{a numeric vector}
 #' \item{edge.dist}{a numeric vector} \item{recruitment}{a
 #' numeric vector} }
-#' @references \url{http://www.jstor.org/stable/2641693}
 #' @source Jules, E.S. and B.J. Rathcke. 1999.  Mechanisms of reduced trillium
 #' recruitment along edges of old-growth forest fragments. \emph{Conservation
-#' Biology} 13:784-793
+#' Biology} 13: 784-793
 #' @keywords datasets
 #' @examples
 #' 
@@ -3709,8 +3699,6 @@ NULL
 #' @format A data frame with 31 observations on the following 2 variables.
 #' \describe{ \item{treatment}{a factor with levels \code{control} and
 #' \code{enhanced}} \item{percent}{a numeric vector} }
-#' @references
-#' \url{http://www.nature.com/nature/journal/v429/n6993/full/nature02539.html}
 #' @source \emph{inferred from} Lim, M.M., Z. Wang, D.E.
 #' Olazabal, X. Ren, E.F. Terwilliger, and L.J. Young. 2004.
 #' Enhanced partner preference in a promiscuous species by manipulating the
@@ -4103,8 +4091,6 @@ NULL
 #' @format A data frame with 20 observations on the following 2 variables.
 #' \describe{ \item{log.homerange}{a numeric vector}
 #' \item{mortality}{a numeric vector} }
-#' @references
-#' \url{http://www.nature.com/nature/journal/v425/n6957/full/425473a.html}
 #' @source Clubb, R. and G. Mason. 2003. Captivity effects on wide ranging
 #' carnivores. \emph{Nature} 425: 473-474.
 #' @keywords datasets
